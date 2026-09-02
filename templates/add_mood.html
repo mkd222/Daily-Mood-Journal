@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Add Mood Entry</h2>
+    <form method="POST" id="mood-form">
+        <div class="mb-3">
+            <label for="mood" class="form-label">Select Your Mood:</label>
+            <select class="form-select" id="mood" name="mood" required>
+                <option value="">-- Choose Mood --</option>
+                <option value="Happy">😊 Happy</option>
+                <option value="Excited">😃 Excited</option>
+                <option value="Neutral">😐 Neutral</option>
+                <option value="Sad">😔 Sad</option>
+                <option value="Stressed">😫 Stressed</option>
+                <option value="Mad">😠 Mad</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="journal_entry" class="form-label">Journal Entry (Optional):</label>
+            <textarea class="form-control" id="journal_entry" name="journal_entry" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Entry</button>
+    </form>
+</div>
+{% endblock %}

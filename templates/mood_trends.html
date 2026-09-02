@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Your Mood Trends</h2>
+    <img src="data:image/png;base64,{{ plot_url }}" class="img-fluid" alt="Mood Trends">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary mt-3">Back to Dashboard</a>
+</div>
+{% endblock %}

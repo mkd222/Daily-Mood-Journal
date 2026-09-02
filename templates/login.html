@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="retro-landing">
+    <div class="retro-container">
+        <h1 class="retro-title text-center">Login</h1>
+        <div class="auth-container">
+            <!--  flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            <div class="wrapper">
+                <div class="switch">
+                    <div class="card-side">
+                        <a href="{{ url_for('login') }}" class="retro-btn">Log in</a>
+                        <a href="{{ url_for('register') }}" class="retro-btn outline">Sign up</a>
+                    </div>
+                </div>
+                <div class="auth-card">
+                    <form method="POST" class="auth-form">
+                        <input type="text" class="flip-card__input" id="username" name="username" placeholder="Username" required>
+                        <input type="password" class="flip-card__input" id="password" name="password" placeholder="Password" required>
+                        <button type="submit" class="retro-btn">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

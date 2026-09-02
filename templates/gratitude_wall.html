@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Gratitude Wall</h2>
+    <p class="lead">Reflect on the things you're grateful for</p>
+    
+    <!-- Add Button -->
+    <a href="{{ url_for('add_gratitude') }}" class="btn btn-primary mb-4">
+        <i class="fas fa-plus"></i> Add New Gratitude Entry
+    </a>
+
+    <!-- Display -->
+    <div class="row">
+        {% if entries %}
+            {% for entry in entries %}
+            <div class="col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <p class="card-text">{{ entry.content }}</p>
+                        <small class="text-muted">
+                            Posted on {{ entry.timestamp.strftime('%B %d, %Y at %I:%M %p') }}
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-12">
+                <div class="alert alert-info">
+                    You haven't added any gratitude entries yet. Start by clicking the button above!
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

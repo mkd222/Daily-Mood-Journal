@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Welcome, {{ user.username }}!</h2>
+    <p>Start tracking your moods today.</p>
+    <a href="{{ url_for('add_mood') }}" class="btn btn-success mb-3">Add New Mood Entry</a>
+
+    {% if entries %}
+    <h3>Your Mood Entries:</h3>
+    <ul class="list-group">
+        {% for entry in entries %}
+        <li class="list-group-item">
+            <strong>{{ entry.timestamp.strftime('%B %d, %Y') }}</strong> - {{ entry.mood }}
+            {% if entry.journal_entry %}
+            <p>{{ entry.journal_entry }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>You have no mood entries yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
+
+<a href="{{ url_for('mood_trends') }}" class="btn btn-info mb-3">View Mood Trends</a>
