@@ -44,16 +44,7 @@ The application creates `data/database.db` locally when it runs. The database is
 
 ## Getting Started
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR-USERNAME/daily-mood-journal.git
-cd daily-mood-journal
-```
-
-Replace `YOUR-USERNAME` with your GitHub username.
-
-### 2. Create a virtual environment
+### 1. Create a virtual environment
 
 ```bash
 python -m venv .venv
@@ -71,13 +62,13 @@ Activate it on macOS or Linux:
 source .venv/bin/activate
 ```
 
-### 3. Install the dependencies
+### 2. Install the dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-### 4. Run the application
+### 3. Run the application
 
 ```bash
 python app.py
