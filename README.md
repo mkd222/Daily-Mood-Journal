@@ -11,6 +11,28 @@ Daily Mood Journal is a full-stack Flask web application that helps users track 
 - **Responsive design:** Use the application on desktop and mobile devices.
 - **Interactive interface:** Includes character counters, form validation, hover effects, and automatically dismissed messages.
 
+## Screenshots
+
+### Homepage
+
+![Homepage](screenshots/homepage.png)
+
+### Login Page
+
+![Login page](screenshots/login-page.png)
+
+### Mood Entry
+
+![Mood entry page](screenshots/mood-entry.png)
+
+### Mood Trends
+
+![Mood trends page](screenshots/mood-trends.png)
+
+### Gratitude Wall
+
+![Gratitude wall](screenshots/gratitude-wall.png)
+
 ## Technologies
 
 - **Backend:** Python, Flask, Flask-SQLAlchemy, Flask-Login
